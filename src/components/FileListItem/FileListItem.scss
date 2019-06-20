@@ -1,0 +1,36 @@
+.file {
+  padding: rem(10) rem(36);
+  text-align: left;
+  display: flex;
+  cursor: pointer;
+  transition: background-color 300ms ease-in-out;
+  border-radius: 15px;
+
+  &:hover,
+  &--active {
+    background: rgba(88, 147, 212, 0.2);
+    transition: background-color 300ms ease-in-out;
+  }
+}
+
+.file__icon {
+  font-size: rem(17);
+  margin-right: rem(20);
+
+  & > svg {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.file__name {
+  font-weight: 600;
+  font-size: rem(22);
+  line-height: 1;
+  margin-bottom: rem(5);
+  margin-top: 0;
+}
+
+.file__desc {
+  color: rgba(255, 255, 255, 0.27);
+}

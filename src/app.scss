@@ -1,0 +1,54 @@
+@import "./styles/_font";
+@import "./styles/_layers";
+@import "./styles/_colors";
+@import "./styles/_helpers";
+@import "./components/Sidebar/Sidebar";
+@import "./components/FileListItem/FileListItem";
+@import "./components/UploadButton/UploadButton";
+
+body {
+  font-family: $font;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+}
+
+.app__sidebar {
+  flex: 1 0 $sidebar-width;
+  max-width: $sidebar-width;
+  height: 100vh;
+}
+
+.content {
+  width: 100%;
+  padding: rem(60) rem(80);
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.content__head {
+  display: flex;
+  color: #2d1f3f;
+  font-weight: bold;
+  font-size: rem(41);
+  align-items: center;
+
+  & > span {
+    display: inline-flex;
+    height: rem(41);
+    width: rem(41);
+  }
+}
+
+.content__title {
+  margin: 0 0 0 rem(24);
+  font-size: rem(60);
+  line-height: 1;
+  height: rem(60);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
