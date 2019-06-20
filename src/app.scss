@@ -5,6 +5,8 @@
 @import "./components/Sidebar/Sidebar";
 @import "./components/FileListItem/FileListItem";
 @import "./components/UploadButton/UploadButton";
+@import "./components/Snackbar/Snackbar";
+@import "./components/Snackbars/Snackbars";
 
 body {
   font-family: $font;
@@ -19,14 +21,22 @@ body {
   flex: 1 0 $sidebar-width;
   max-width: $sidebar-width;
   height: 100vh;
+
+  @media screen and(max-width: 1024px) {
+    flex-basis: 0;
+  }
 }
 
 .content {
   width: 100%;
-  padding: rem(60) rem(80);
+  padding: rem(40) rem(80);
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: auto;
+
+  @media screen and(max-width: 1024px) {
+    padding: rem(10) rem(20);
+  }
 }
 
 .content__head {
@@ -46,9 +56,29 @@ body {
 .content__title {
   margin: 0 0 0 rem(24);
   font-size: rem(60);
-  line-height: 1;
-  height: rem(60);
+  line-height: 1.5;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @media screen and(max-width: 1024px) {
+    font-size: rem(40);
+    text-align: center;
+    width: 100%;
+  }
+
+  @media screen and(max-width: 768px) {
+    font-size: rem(20);
+    text-align: center;
+  }
+}
+
+.content__article {
+  margin-top: rem(50);
+  line-height: 1.5;
+  font-size: 1.2rem;
+}
+
+.page-pdf {
+  overflow: auto;
 }

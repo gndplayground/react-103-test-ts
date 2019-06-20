@@ -1,5 +1,4 @@
 .sidebar {
-  background-color: #070d59;
   position: fixed;
   z-index: $z-index-sidebar;
   top: 0;
@@ -8,6 +7,18 @@
   height: 100%;
   display: flex;
   color: $color-white;
+
+  transition: left 300ms ease-in-out;
+
+  @media screen and(max-width: 1024px) {
+    left: -$sidebar-width;
+    transition: left 300ms ease-in-out;
+  }
+
+  &--open {
+    left: 0;
+    transition: left 300ms ease-in-out;
+  }
 }
 
 .sidebar__content {
@@ -16,6 +27,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: #070d59;
 }
 
 .sidebar__logo {
@@ -28,6 +40,7 @@
 }
 
 .sidebar__list {
+  flex: 1;
   margin-top: rem(50);
   padding-left: rem(20);
   padding-right: rem(20);
@@ -56,4 +69,26 @@
   width: 100%;
   padding: rem(40);
   box-sizing: border-box;
+}
+
+.sidebar__toggle {
+  padding: rem(10);
+  color: red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: left 300ms ease-in-out;
+  background-color: $color-bg-sidebar;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+
+  &--open {
+    left: $sidebar-width;
+    transition: left 300ms ease-in-out;
+  }
+
+  @media screen and (min-width: 1025px) {
+    display: none;
+  }
 }

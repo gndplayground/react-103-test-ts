@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, LiHTMLAttributes } from "react";
 import clsx from "clsx";
 import Document from "../Icons/Document";
 
-export interface FileListItemProps {
+export interface FileListItemProps extends LiHTMLAttributes<HTMLLIElement> {
   active?: boolean;
   fileName: string;
   desc: string;
@@ -13,14 +13,18 @@ const FileListItem: FunctionComponent<FileListItemProps> = ({
   active,
   fileName,
   desc,
-  className
+  className,
+  ...props
 }) => {
   return (
-    <li className={clsx("file", active && "file--active", className)}>
+    <li
+      className={clsx("file", active && "file--active", className)}
+      {...props}
+    >
       <div className="file__icon">
         <Document />
       </div>
-      <div>
+      <div className="file__display">
         <p className="file__name">{fileName}</p>
         <span className="file__desc">{desc}</span>
       </div>

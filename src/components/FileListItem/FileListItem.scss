@@ -23,14 +23,26 @@
   }
 }
 
+.file__display {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .file__name {
   font-weight: 600;
   font-size: rem(22);
   line-height: 1;
   margin-bottom: rem(5);
   margin-top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .file__desc {
   color: rgba(255, 255, 255, 0.27);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

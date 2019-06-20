@@ -1,0 +1,28 @@
+.snackbar {
+  padding: 0.875rem 1rem;
+  color: $color-white;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 6px 10px 0 rgba(0, 0, 0, 0.14);
+  background-color: #202020;
+  border-radius: 0.25rem;
+  align-items: center;
+  display: inline-flex;
+  min-width: rem(349);
+}
+
+.snackbar--error {
+  background-color: $color-error;
+  color: $color-white;
+}
+
+.snackbar--success {
+  background-color: $color-success;
+  color: $color-white;
+}
+
+.snackbar__icon {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-self: flex-start;
+}
